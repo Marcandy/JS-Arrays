@@ -63,7 +63,6 @@ function evenFinder(nums) {
       nums.splice(i, 1);
 
     }
-
   }
 return nums;
 }
@@ -78,7 +77,22 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
+function divider(numbersArray) {
+  var total = [];
+  var even = [];
+  var odds = [];
 
+  for (var i = 0; i < numbersArray.length; i++) {
+  if(numbersArray[i] % 2 === 0){
+    even.push(numbersArray[i]);
+    }
+    else {
+      odds.push(numbersArray[i]);
+    }
+  }
+  total.push(even, odds);
+  return total;
+}
 
 //Next Problem
 
