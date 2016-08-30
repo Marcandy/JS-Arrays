@@ -202,7 +202,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
-
+function addTen(numbers) {
+  var arr = [];
+  for (var i = 0; i < numbers.length; i++) {
+    numbers[i]= parseInt(numbers[i]);
+    arr.push((numbers[i] + 10));
+  }
+  return arr;
+}
 
 
 //Next Problem
@@ -223,7 +230,14 @@ for(var i = 0; i < num2; i++){
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
-
+function longer(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1;
+  }
+  else {
+    return arr2;
+  }
+}
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -233,7 +247,17 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 
-
+function both(arr1, arr2) {
+  var both = [];
+  for (var i = 0; i < arr1.length; i++) {
+    for (var j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j] ) {
+        both.push(arr1[i]);
+      }
+    }
+  }
+  return both;
+}
 
 
 //NEXT PROBLEM
@@ -272,12 +296,18 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+for (var i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 
