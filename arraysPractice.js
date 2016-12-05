@@ -56,7 +56,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
-
+function evenFinder(nums) {
+  for (var i = 0; i < nums.length; i++) {
+    if(nums[i] % 2 !== 0) {
+      nums.splice(i, 1);
+      i--
+    }
+  }
+  return nums;
+}
 
 //Next problem
 
@@ -68,7 +76,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
-
+function divider(numbersArray) {
+  var newArr = [[], []]
+  for (var i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 === 0) {
+      newArr[0].push(numbersArray[i]);
+    }
+    else if (numbersArray[i] % 2 !== 0){
+      newArr[1].push(numbersArray[i]);
+    }
+  }
+  return newArr;
+}
 
 //Next Problem
 
@@ -82,7 +101,16 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
+function finder(arr) {
+  var ran = getRandomArbitrary();
 
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === ran) {
+      return true
+    }
+  }
+  return false;
+}
   //Code Here
 
 
