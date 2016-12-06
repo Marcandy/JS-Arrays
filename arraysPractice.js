@@ -146,19 +146,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
-  function removeItem(arr, item) {
-    for (var i = 0; i < arr.length; i++) {
-      if(arr[i] === item) {
-        arr.splice(i, 1);
+  function removeItem(list, item) {
+    if ( list === undefined ) {
+      return [];
+    }
+    for (var i = 0; i < list.length; i++) {
+      if(list[i] === item) {
+        list.splice(i, 1);
       }
     }
-    return arr;
+    return list;
   }
 
-  function addItem(arr2, item) {
-     arr2.push(item);
-     return arr2;
+  function addItem(list2, add) {
+    if ( list2 === undefined ) {
+      return [];
+    }
+  for (var i = 0; i < list2.length; i++) {
+    if (list2[i] === Add) {
+      return list;
+    }
   }
+  list2.push( add );
+    return list2;
+}
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -233,7 +244,7 @@ function both(arr1, arr2) {
   for (var i = 0; i < arr1.length; i++) {
     for (var j = 0; j < arr2.length; j++) {
       if(arr1[i] === arr2[j]) {
-        newB.push(arr[i])
+        newB.push(arr1[i])
       }
     }
   }
@@ -330,6 +341,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+  var users = []
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -343,7 +355,21 @@ var user1 = {
 };
 
 //Your Code Here
+var user2 = {
+    name: 'Tyler McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
 
+var user3 = {
+    name: 'Tyler McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+
+users.push(user1, user2, user3);
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
 and those objects contain properties about the specific person you follow.*/
@@ -353,5 +379,12 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+  for ( var i = users.length - 1; i >= 0; i-- ) {
+    var currentUser = users[ i ];
+    if ( currentUser.email === 'tylermcginnis33@gmail.com' ) {
+      users.splice( i, 1 );
+    }
+  }
+  console.log( users );
 
 //The activity we just did is very much how data works in 'the real world'.
