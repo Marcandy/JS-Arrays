@@ -100,6 +100,8 @@ var getRandomArbitrary = function() {
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
+
+
   //Code Here
 function finder(arr) {
   var ran = getRandomArbitrary();
@@ -171,6 +173,9 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
     return list2;
 }
 
+    myGroceryList.push(item);
+    return myGroceryList;
+  }
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
